@@ -22,6 +22,10 @@ app.post("/webhook", async (req, res) => {
         console.log(`intent  =>  sendNotes`);
         agent.add("courses are available, select any one")
     }
+    function XI(agent) {
+        console.log(`intent  =>  XI`);
+        agent.add("XI notes are available")
+    }
     function Mathematics(agent) {
         console.log(`intent  =>  Mathematics`);
         agent.add("XI year mathematics notes are available, you can solve the problems by clicking")
@@ -42,6 +46,7 @@ app.post("/webhook", async (req, res) => {
     let intentMap = new Map();
     intentMap.set('Default Welcome Intent', hi ); 
     intentMap.set('Courses', sendNotes);
+    intentMap.set('XI', XI );
     intentMap.set('Mathematics', Mathematics );
     intentMap.set('Physics', Physics);
     intentMap.set('Chemistry', Chemistry);
